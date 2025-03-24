@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/flowers.png" type="image/x-icon" />
+    <title>Flowers for Yoga</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffe0f0, #ffeef8);
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .greetings {
+            margin-top: 80px;
+            font-size: 50px;
+            color: #ff69b4;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .greetings span {
+            display: inline-block;
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        .greetings span:nth-child(odd) {
+            transform: translateY(-20px);
+        }
+
+        .greetings span:nth-child(even) {
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #555;
+            animation: fadeInText 2s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .button {
+            margin-top: 50px;
+            animation: fadeInText 2.5s ease forwards;
+            opacity: 0;
+        }
+
+        .button button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .button button:hover {
+            background-color: #ff85c1;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: sparkleAnim 3s linear infinite;
+        }
+
+        @keyframes sparkleAnim {
+            0% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.5) translateY(-100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="greetings">
+        <span>H</span><span>A</span><span>L</span><span>L</span><span>O</span>
+        <br>
+        <span>B</span><span>A</span><span>P</span><span>A</span><span>Y</span><span>O</span><span>G</span><span>A</span>
+    </div>
+
+    <div class="description">
+        <span>aku punya hadiah spesial buat kamu nihhhh.....</span>
+    </div>
+
+    <div class="button">
+        <button>
+            <a href="bunga.html">klik disini ^.^</a>
+        </button>
+    </div>
+
+    <!-- Sparkles effect -->
+    <script>
+        const body = document.body;
+        for (let i = 0; i < 30; i++) {
+            let sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDuration = (2 + Math.random() * 2) + 's';
+            body.appendChild(sparkle);
+        }
+    </script>
+
+</body>
+</html>
